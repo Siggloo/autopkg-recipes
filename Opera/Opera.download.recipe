@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Opera.</string>
+	<key>Identifier</key>
+	<string>com.github.siggloo.download.Opera</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Opera</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://download.opera.com/download/get/?id=55966&amp;location=415&amp;nothanks=yes&amp;sub=marine&amp;utm_tryagain=yes</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Opera.app</string>
+				<key>requirement</key>
+				<string>(identifier "com.operasoftware.Opera" or identifier "com.operasoftware.OperaNext" or identifier "com.operasoftware.OperaDeveloper" or identifier "com.operasoftware.OperaNightly" or identifier "com.operasoftware.OperaGX" or identifier "com.operasoftware.OperaGXNext" or identifier "com.operasoftware.OperaGXDeveloper" or identifier "com.operasoftware.OperaGXNightly") and (certificate leaf = H"cdf1c39967986616b6cd64c6bd04833a9cb7450d" or certificate leaf = H"261cd515406974afa19778f62e5d916ec977ebf4")</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Opera.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
