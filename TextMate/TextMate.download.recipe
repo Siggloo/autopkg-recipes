@@ -20,10 +20,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>github_repo</key>
+				<string>textmate/textmate</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
-				<string>%NAME%.zip</string>
-				<key>url</key>
-				<string>https://api.textmate.org/downloads/release?os=10.12</string>
+				<string>%NAME%-%version%.tgz</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
