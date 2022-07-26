@@ -1,6 +1,6 @@
 ---
 Description: Downloads the latest version of GIMP from gimp.org and builds a package.
-Identifier: com.github.grahampugh.pkg.GIMP
+Identifier: com.github.siggloo.pkg.GIMP
 Input:
   NAME: GIMP
 MinimumVersion: 0.5.2
