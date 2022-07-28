@@ -30,5 +30,5 @@ Process:
       id: org.gimp.GIMP
       options: purge_ds_store
       pkgdir: '%RECIPE_CACHE_DIR%'
-    pkgname: '%NAME%-%version% - APG'
+    pkgname: '%NAME%-%version%'
   Processor: PkgCreator
