@@ -15,7 +15,7 @@ Process:
     pkgroot: '%RECIPE_CACHE_DIR%/%NAME%'
   Processor: PkgRootCreator
 - Arguments:
-    destination_path: '%pkgroot%/Applications/%NAME% - APG.app'
+    destination_path: '%pkgroot%/Applications/%NAME%.app'
     source_path: '%pathname%/*.app'
   Processor: Copier
 - Arguments:
@@ -30,5 +30,5 @@ Process:
       id: org.gimp.GIMP
       options: purge_ds_store
       pkgdir: '%RECIPE_CACHE_DIR%'
-    pkgname: '%NAME%-%version%'
+    pkgname: '%NAME%-%version% - APG'
   Processor: PkgCreator
