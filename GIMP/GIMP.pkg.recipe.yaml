@@ -8,7 +8,6 @@ ParentRecipe: io.github.hjuutilainen.download.GIMP
 Process:
 - Arguments:
     dmg_path: '%pathname%'
-
   Processor: AppDmgVersioner
 - Arguments:
     pkgdirs:
@@ -16,7 +15,7 @@ Process:
     pkgroot: '%RECIPE_CACHE_DIR%/%NAME%'
   Processor: PkgRootCreator
 - Arguments:
-    destination_path: '%pkgroot%/Applications/%NAME%.app'
+    destination_path: '%pkgroot%/Applications/%NAME% - APG.app'
     source_path: '%pathname%/*.app'
   Processor: Copier
 - Arguments:
