@@ -5,35 +5,46 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of 1Password8, creates a fileset, and copies it into your FileWave Server.</string>
+	<string>Downloads the latest version of Flipper, creates a fileset, and copies it into your FileWave Server.</string>
 	<key>Identifier</key>
-	<string>com.github.siggloo.filewave.1Password8</string>
+	<string>com.github.siggloo.filewave.Flipper</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>1Password8</string>
+		<string>Flipper</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.siggloo.download.1Password8</string>
+	<string>com.github.siggloo.download.Flipper</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Flipper.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>fw_app_bundle_id</key>
-				<string>com.1password.1password-installer</string>
+				<string>com.facebook.sonar</string>
 				<key>fw_app_version</key>
 				<string>%version%</string>
 				<key>fw_destination_root</key>
-				<string>/Applications/1Password Installer.app</string>
+				<string>/Applications/Flipper.app</string>
 				<key>fw_fileset_group</key>
 				<string>Testing</string>
 				<key>fw_fileset_name</key>
 				<string>%NAME% - %version%</string>
 				<key>fw_import_source</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/1Password Installer.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Flipper.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.autopkg.filewave.FWTool/FileWaveImporter</string>
